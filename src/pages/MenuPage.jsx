@@ -25,12 +25,12 @@ export default function MenuPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-slate-50">
       {/* Drawer Component */}
       <Drawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
 
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 shadow-lg">
+      <div className="bg-blue-600 text-white p-6">
         <div className="flex items-center justify-between max-w-md mx-auto">
           <button
             onClick={() => setIsDrawerOpen(true)}
@@ -39,7 +39,7 @@ export default function MenuPage() {
             <Menu className="w-5 h-5" />
           </button>
           <div className="flex-1 text-center">
-            <h1 className="text-2xl font-bold">Traceability System</h1>
+            <h1 className="text-2xl font-bold">Shinsei Traceability</h1>
             <p className="text-blue-100 text-sm mt-1">
               {user?.username || 'Main Menu'} • {user?.role || 'User'}
             </p>
@@ -58,15 +58,19 @@ export default function MenuPage() {
               onClick={() => navigate(item.path)}
               className="w-full group"
             >
-              <div className={`bg-gradient-to-r ${item.color} p-6 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200`}>
+              <div className={`bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-200`}>
                 <div className="flex items-center space-x-4">
-                  <div className="p-4 bg-white/20 backdrop-blur-sm rounded-xl">
-                    <Icon className="w-8 h-8 text-white" />
+                  <div className={`p-4 ${
+                    index === 0 ? 'bg-emerald-100' : 'bg-blue-100'
+                  } rounded-xl`}>
+                    <Icon className={`w-8 h-8 ${
+                      index === 0 ? 'text-emerald-600' : 'text-blue-600'
+                    }`} />
                   </div>
                   <div className="flex-1 text-left">
-                    <h2 className="text-xl font-bold text-white">{item.title}</h2>
+                    <h2 className="text-xl font-bold text-slate-800">{item.title}</h2>
                   </div>
-                  <div className="text-white/70 group-hover:text-white transition-colors">
+                  <div className="text-slate-400 group-hover:text-slate-600 transition-colors">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

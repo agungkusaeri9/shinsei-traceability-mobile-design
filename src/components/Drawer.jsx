@@ -35,7 +35,7 @@ export default function Drawer({ isOpen, onClose }) {
         }`}
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white">
+        <div className="bg-blue-600 p-6 text-white">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-bold">Menu</h2>
             <button
@@ -47,7 +47,7 @@ export default function Drawer({ isOpen, onClose }) {
           </div>
 
           {/* Profile Section */}
-          <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-xl p-4">
+          <div className="flex items-center space-x-3 bg-white/10 rounded-xl p-4">
             <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
               <User className="w-6 h-6" />
             </div>
